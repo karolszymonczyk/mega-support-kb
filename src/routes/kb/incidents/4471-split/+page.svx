@@ -1,0 +1,64 @@
+---
+layout: runbook
+title: '#4471 split · three problems, not one'
+owner: Karol Szymonczyk
+status: open
+reviewed: 2026-10-29
+signature: Karol Szymonczyk
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+
+  const issues = {
+    parser: 'https://github.com/karolszymonczyk/mega-support-kb/issues/1',
+    hint: 'https://github.com/karolszymonczyk/mega-support-kb/issues/2',
+    'one-day': 'https://github.com/karolszymonczyk/mega-support-kb/issues/3',
+  };
+</script>
+
+[#4471](/kb/incidents/4471) is marked known: one issue, one fix queued. Read report by report, it
+holds three problems. The parser fix closes only the first.
+
+<Callout kind="warn">
+Shipping the parser fix and closing #4471 leaves the other two open, with no ticket. Each problem
+now has its own ticket below.
+</Callout>
+
+## What #4471 holds
+
+<ProblemTable ticket={4471} {issues} />
+
+## The three problems
+
+**`parser` — day and month swap.** The shared parser reads every date month first. Every tenant
+writes the day first, so a date with a day of 12 or lower comes out swapped: "Booked for
+2 December. The invite says 12 February." App and email reports, and form reports from
+booking-v2 tenants, whose hint already reads DD/MM/YYYY.
+
+**`hint` — the booking-v3 form asks for the month first.** booking-v3 prints `MM/DD/YYYY` under
+its date field, and its tenants write the day first. People type what the hint says; the form reads
+it the tenant's way. Only form reports from booking-v3 tenants. Fixing the parser does not touch
+this one.
+
+**`one-day` — the date moves by a day.** Not a swap: "Client in Lisbon got Tuesday. Client in
+Toronto got Monday." A timezone or day-boundary conversion, not the parser. The desk already noted
+these as one-day moves, then filed them under `parser` by tenant.
+
+## How these were counted
+
+- One report per id: the export pages overlap, so some rows come twice.
+- Cause by tenant, never by intake's tag. Intake guesses from the reporter's browser; the tenant's
+  locale and booking form decide (`causes.ts`). Intake's tag disagrees with the cause for many of
+  these reports.
+- A report the desk read as a one-day move (`desk-notes.json`) counts there, not under `parser`.
+
+## Lessons
+
+- Merging by subject line is fast, and it hides causes. Before you mark a big ticket known, split
+  it by cause and check that each part has a ticket.
+- A footnote under a table is not a ticket.
+
+<RenderStamp {signature} />
