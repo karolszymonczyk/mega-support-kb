@@ -4,7 +4,7 @@ title: '#4471 split · three problems, not one'
 owner: Karol Szymonczyk
 status: open
 reviewed: 2026-10-29
-signature: Karol Szymonczyk
+signature: v1.eyJzdWIiOiIzOTI4IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyNzg1MDgsImV4cCI6MTc5MzM2NDkwOH0.QtQYXY3ht1xltmzasUih4RYI9noi61cPcbG9PLpVc-k
 ---
 
 <script>
