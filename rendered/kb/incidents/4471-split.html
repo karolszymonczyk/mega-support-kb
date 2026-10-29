@@ -9,11 +9,11 @@
 		<link href="../../_app/immutable/chunks/B2Ul7l_u.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BCPXOG7W.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Dh1V97Jm.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.DiBq472l.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.Bo2VBdHj.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.C9KfiiPz.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.DGSQOBbs.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/DGOHpp-P.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.CdQik5Gf.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DE09v1hK.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BTPwLomz.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CVBzP17p.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BIy4WKJS.js" rel="modulepreload">
@@ -29,9 +29,11 @@ aside.svelte-17bri61{border-left:4px solid var(--accent);background:var(--note-b
 		<link href="../../_app/immutable/assets/_page.CgouBqEL.css" rel="stylesheet" disabled media="(max-width: 0)">
   </head>
   <body>
-    <div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 split · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Karol Szymonczyk</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> is marked known: one issue, one fix queued. Read report by report, it
-holds three problems. The parser fix closes only the first.</p> <aside class="warn svelte-17bri61"><!---->Shipping the parser fix and closing #4471 leaves the other two open, with no ticket. Each problem
-now has its own ticket below.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
+    <div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 split · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Karol Szymonczyk</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was marked known: one issue, one fix queued. Read report by report, it
+holds three problems. Engineering closed #4471 on 5 October. That settles two of them; the third
+is still open.</p> <aside class="warn svelte-17bri61"><p>#4471 is closed, and the one-day problem is not fixed. Its reports have their own open ticket: <a href="https://github.com/karolszymonczyk/mega-support-kb/issues/3" rel="nofollow">#3</a>.</p><!----></aside><!----> <h2>Where each problem stands</h2> <ul><li><strong><code>parser</code> — fixed.</strong> Engineering shipped <code>fix(dates): parse dd/mm for eu locales</code>. <a href="https://github.com/karolszymonczyk/mega-support-kb/issues/1" rel="nofollow">#1</a> is closed. To check: two tenants
+write <code>en-GB</code> and <code>en-IE</code>. If the fix reads a list of EU locales, not the locale’s own date order, <code>en-GB</code> may still swap.</li> <li><strong><code>hint</code> — won’t fix.</strong> The booking-v3 form is retired, so its <code>MM/DD/YYYY</code> hint reaches nobody
+now. <a href="https://github.com/karolszymonczyk/mega-support-kb/issues/2" rel="nofollow">#2</a> is closed as not planned.</li> <li><strong><code>one-day</code> — open.</strong> Neither change touches a date that shifts by a day across timezones. <a href="https://github.com/karolszymonczyk/mega-support-kb/issues/3" rel="nofollow">#3</a> stays open until someone owns it.</li></ul> <h2>What #4471 holds</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
   (427 rows in the export; 15 repeated) · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>374</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/karolszymonczyk/mega-support-kb/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>33</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/karolszymonczyk/mega-support-kb/issues/2">#2</a><!--]--></td></tr><tr><td><code>one-day</code></td><td>5</td><td>5</td><td>2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/karolszymonczyk/mega-support-kb/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <h2>The three problems</h2> <p><strong><code>parser</code> — day and month swap.</strong> The shared parser reads every date month first. Every tenant
 writes the day first, so a date with a day of 12 or lower comes out swapped: “Booked for
 2 December. The invite says 12 February.” App and email reports, and form reports from
@@ -43,20 +45,20 @@ Toronto got Monday.” A timezone or day-boundary conversion, not the parser. Th
 these as one-day moves, then filed them under <code>parser</code> by tenant.</p> <h2>How these were counted</h2> <ul><li>One report per id: the export pages overlap, so some rows come twice.</li> <li>Cause by tenant, never by intake’s tag. Intake guesses from the reporter’s browser; the tenant’s
 locale and booking form decide (<code>causes.ts</code>). Intake’s tag disagrees with the cause for many of
 these reports.</li> <li>A report the desk read as a one-day move (<code>desk-notes.json</code>) counts there, not under <code>parser</code>.</li></ul> <h2>Lessons</h2> <ul><li>Merging by subject line is fast, and it hides causes. Before you mark a big ticket known, split
-it by cause and check that each part has a ticket.</li> <li>A footnote under a table is not a ticket.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-EGDP-1GDX</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+it by cause and check that each part has a ticket.</li> <li>A footnote under a table is not a ticket.</li> <li>Closing the big ticket is not the same as fixing what was merged into it. Check each part.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-EGDP-1GDX</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_p8bhw0 = {
+					__sveltekit_11h63ek = {
 						base: new URL("../..", location).pathname.slice(0, -1),
-						version: "1793278129835"
+						version: "1793278484808"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../_app/immutable/entry/start.CH5w6lId.js").then(async (kit) => {
-						kit.init(__sveltekit_p8bhw0);
-						const app = await import("../../_app/immutable/entry/app.DiBq472l.js");
+						kit.init(__sveltekit_11h63ek);
+						const app = await import("../../_app/immutable/entry/app.Bo2VBdHj.js");
 						kit.start(app, element, {
 							node_ids: [0, 5],
 							data: [null,null],

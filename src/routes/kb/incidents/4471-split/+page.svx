@@ -19,13 +19,27 @@ signature: Karol Szymonczyk
   };
 </script>
 
-[#4471](/kb/incidents/4471) is marked known: one issue, one fix queued. Read report by report, it
-holds three problems. The parser fix closes only the first.
+[#4471](/kb/incidents/4471) was marked known: one issue, one fix queued. Read report by report, it
+holds three problems. Engineering closed #4471 on 5 October. That settles two of them; the third
+is still open.
 
 <Callout kind="warn">
-Shipping the parser fix and closing #4471 leaves the other two open, with no ticket. Each problem
-now has its own ticket below.
+
+#4471 is closed, and the one-day problem is not fixed. Its reports have their own open ticket:
+[#3](https://github.com/karolszymonczyk/mega-support-kb/issues/3).
+
 </Callout>
+
+## Where each problem stands
+
+- **`parser` — fixed.** Engineering shipped `fix(dates): parse dd/mm for eu locales`.
+  [#1](https://github.com/karolszymonczyk/mega-support-kb/issues/1) is closed. To check: two tenants
+  write `en-GB` and `en-IE`. If the fix reads a list of EU locales, not the locale's own date order,
+  `en-GB` may still swap.
+- **`hint` — won't fix.** The booking-v3 form is retired, so its `MM/DD/YYYY` hint reaches nobody
+  now. [#2](https://github.com/karolszymonczyk/mega-support-kb/issues/2) is closed as not planned.
+- **`one-day` — open.** Neither change touches a date that shifts by a day across timezones.
+  [#3](https://github.com/karolszymonczyk/mega-support-kb/issues/3) stays open until someone owns it.
 
 ## What #4471 holds
 
@@ -60,5 +74,6 @@ these as one-day moves, then filed them under `parser` by tenant.
 - Merging by subject line is fast, and it hides causes. Before you mark a big ticket known, split
   it by cause and check that each part has a ticket.
 - A footnote under a table is not a ticket.
+- Closing the big ticket is not the same as fixing what was merged into it. Check each part.
 
 <RenderStamp {signature} />
